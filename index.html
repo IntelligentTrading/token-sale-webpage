@@ -476,60 +476,68 @@
 
               <h3 class="ico-card__title">Purchase with Ethereum</h3>
 
-              <div class="ico-card__inner">
+              <div class="step-one is-active">
 
                 <div class="ico-card__content">
-
                   <div class="ico-card__wallet-id">
                     <form action="#">
                       <div class="field">
                         <label for="ethereum-address">Wallet Address</label>
                         <input class="wallet" type="text" name="ethereum-address" placeholder="Enter your Ethereum wallet address">
-                        <span class="ico-card__message"></span>
+                        <span class="ico-card__message">That doesn't look like a valid wallet address</span>
                       </div>
                     </form>
                   </div>
-
                 </div><!-- ico-card__content -->
 
                 <div class="ico-card__next-step">
-                  <a href="#" class="btn btn--naked ico-card__button" data-token="1" data-nonce="f34228c26f">Next Step</a>
+                  <a href="#" class="btn btn--naked ico-card__button">Next Step</a>
                 </div><!-- ico-card__next-step -->
 
-              </div><!-- .ico-card__inner -->
+              </div><!-- .step-one -->
+
+              <div class="step-two">
+                <div class="ico-card__content">
+                  <p>Send ETH to:</p><span class="copy-box copy-box--text">' + eth_address + '</span>
+                  <p>ITT tokens will be sent to:</p><span class="copy-box copy-box--text disabled">' + wallet + '</span>
+                </div>
+              </div>
 
             </div><!-- .ico-card -->
             <!-- Ethereum ICO Card -->
 
 
-
-
-            <!-- Bitcoin ICO Card -->
+          <!-- Bitcoin ICO Card -->
             <div class="ico-card ico-card--bitcoin" data-coin="bitcoin">
 
               <h3 class="ico-card__title">Purchase with Bitcoin</h3>
 
-              <div class="ico-card__inner">
+              <div class="step-one is-active">
 
                 <div class="ico-card__content">
-
                   <div class="ico-card__wallet-id">
                     <form action="#">
                       <div class="field">
                         <label for="bitcoin-address">Wallet Address</label>
-                        <input class="wallet" type="text" name="bitcoin-address" placeholder="Enter your Bitcoin wallet address" autofocus>
-                        <span class="ico-card__message"></span>
+                        <input class="wallet" type="text" name="bitcoin-address" placeholder="Enter your Bitcoin wallet address">
+                        <span class="ico-card__message">That doesn't look like a valid wallet address</span>
                       </div>
                     </form>
                   </div>
-
                 </div><!-- ico-card__content -->
 
                 <div class="ico-card__next-step">
-                  <a href="#" class="btn btn--naked ico-card__button" data-token="0" data-nonce="f34228c26f">Next Step</a>
+                  <a href="#" class="btn btn--naked ico-card__button">Next Step</a>
                 </div><!-- ico-card__next-step -->
 
-              </div><!-- .ico-card__inner -->
+              </div><!-- .step-one -->
+
+              <div class="step-two">
+                <div class="ico-card__content">
+                  <p>Send BTC to:</p><span class="copy-box copy-box--text">Bitcoin Address here</span>
+                  <p>ITT tokens will be sent to:</p><span class="copy-box copy-box--text disabled">Customer wallet address.</span>
+                </div>
+              </div>
 
             </div><!-- .ico-card -->
             <!-- Bitcoin ICO Card -->

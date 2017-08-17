@@ -2,97 +2,70 @@ jQuery(document).ready( function($) {
 
 	var icoButton = $('.ico-card__button');
 
-    var btc_address = "1F6fhLSVnnv9NZ8v6Sevsve5PLUcezXpQy";
-    var btc_address_10 = "1ACydwVvcW5XERpLBy4AHvwTLgzicN1k2F";
-    var btc_address_20 = "1Mptoc1pQRpB4E2cPpxGrG9tAiehh7gEue";
+    var eth_address 		= "0x57677cea00492982AEf8da2F75635E69ec64f872";
+    var eth_address_10 		= "0xfcF9fA13978D6B6825A3c75342dF28DcF86559a1";
+    var eth_address_20 		= "0x8338bCD380b4380191F71de310e338223Af02357";
 
-    var eth_address = "0x57677cea00492982AEf8da2F75635E69ec64f872";
-    var eth_address_10 = "0xfcF9fA13978D6B6825A3c75342dF28DcF86559a1";
-    var eth_address_20 = "0x8338bCD380b4380191F71de310e338223Af02357";
+	var ethCard 			= $('.ico-card--ethereum');
+	var ethWallet 			= $('.ico-card--ethereum .wallet');
+	var ethBuy				= $('.ico-card--ethereum .ico-card__button');
+	var ethError			= $('.ico-card--ethereum .ico-card__message');
+	var ethStepOne 			= $('.ico-card--ethereum .step-one')
+	var ethStepTwo 			= $('.ico-card--ethereum .step-two')
 
 
-	$(icoButton).on('click', function(e) {
+    var btc_address 		= "1F6fhLSVnnv9NZ8v6Sevsve5PLUcezXpQy";
+    var btc_address_10 		= "1ACydwVvcW5XERpLBy4AHvwTLgzicN1k2F";
+    var btc_address_20 		= "1Mptoc1pQRpB4E2cPpxGrG9tAiehh7gEue";
+
+	var btcCard 			= $('.ico-card--bitcoin');
+	var btcWallet 			= $('.ico-card--bitcoin .wallet');
+	var btcBuy				= $('.ico-card--bitcoin .ico-card__button');
+	var btcError			= $('.ico-card--bitcoin .ico-card__message');
+	var btcStepOne 			= $('.ico-card--bitcoin .step-one')
+	var btcStepTwo 			= $('.ico-card--bitcoin .step-two')
+
+
+	// Ethereum funding.
+	$(ethBuy).on('click', function(e) {
 
 		e.preventDefault();
+		$(ethError).removeClass('is-active');
 
-		var token			= $(this).data('token');
-		var icoCard 		= $(this).closest('.ico-card');
-		var errorMessage 	= $(icoCard).find('.ico-card__message');
-		var wallet 			= $(icoCard).find('.wallet');
-		wallet 				= $(wallet).val();
-
-		var coin = $(icoCard).data('coin');
-
-		var newContentContainer = $(icoCard).find('.ico-card__inner');
-
-		if( 'bitcoin' == coin && !isBTCAddress(wallet) ) {
- 			$(errorMessage).addClass('is-active');
- 			$(errorMessage).html( 'That doesn\'t look like a valid wallet address' );
+		var address = $(ethWallet).val();
+		// var valid = isETHAddress(address);
+		var valid = true;
+		if( ! valid ) {
+			$(ethError).addClass('is-active');
 			return;
 		}
 
-		if( 'ethereum' == coin && !isETHAddress(wallet) ) {
- 			$(errorMessage).addClass('is-active');
- 			$(errorMessage).html( 'That doesn\'t look like a valid wallet address' );
-			return;
-		}
-
-		// Insert the new content.
-		$(newContentContainer).html('');
-		$( addCardContent(wallet, coin, errorMessage) ).appendTo(newContentContainer);
-		initCopyBox();
+		$(ethStepOne).removeClass('is-active');
+		$(ethStepTwo).addClass('is-active');
 
 	});
 
 
-	function addCardContent(wallet, coin, errorMessage) {
 
-		if( 'bitcoin' == coin ) {
+	// Bitcoin funding.
+	$(btcBuy).on('click', function(e) {
 
-			return '<div class="ico-card__content"><p>Send BTC to:</p><span class="copy-box copy-box--text">' + btc_address + '</span><p>You must include this in the transaction message:</p><span class="copy-box copy-box--text">Send ITT tokens to ' + wallet + ' </span><p>Your referral link is:</p><span class="copy-box copy-box--text">http://intelligenttrading.org/ico?r=' + wallet.substr(wallet.length - 8) + '</span></div>';
+		e.preventDefault();
+		$(btcError).removeClass('is-active');
 
-		} else if( 'ethereum' == coin ) {
-
-			return '<div class="ico-card__content"><p>Send ETH to:</p><span class="copy-box copy-box--text">' + eth_address + '</span><p>Your referral link is:</p><span class="copy-box copy-box--text">http://intelligenttrading.org/ico?r=' + wallet.substr(wallet.length - 8) + '</span><p>ITT tokens will be sent to your Ethereum address:</p><span class="copy-box copy-box--text disabled">' + wallet + '</span></div>';
-
+		var address = $(btcWallet).val();
+		var valid = isBTCAddress(address);
+		// var valid = true;
+		if( ! valid ) {
+			$(btcError).addClass('is-active');
+			return;
 		}
 
-	}
+		$(btcStepOne).removeClass('is-active');
+		$(btcStepTwo).addClass('is-active');
 
+	});
 
-	function initCopyBox() {
-
-		$('.copy-box--text').click(function (){
-		    var text = $(this).text();
-		    var $this = $(this);
-		    var $input = $('<input type=text>');
-		    $input.prop('value', text);
-		    $input.insertAfter($(this));
-		    $input.focus();
-		    $input.select();
-		    $this.hide();
-		    $input.focusout(function(){
-		        $this.show();
-		        $input.remove();
-		    });
-		})
-
-		$('.copy-box--textarea').click(function (){
-		    var text = $(this).text();
-		    var $this = $(this);
-		    var $input = $('<textarea></textarea>');
-		    $input.prop('value', text);
-		    $input.insertAfter($(this));
-		    $input.focus();
-		    $input.select();
-		    $this.hide();
-		    $input.focusout(function(){
-		        $this.show();
-		        $input.remove();
-		    });
-		})
-
-	}
 
 });
 
@@ -124,7 +97,7 @@ var isETHAddress = function (address) {
  * @param {String} address the given HEX adress
  * @return {Boolean}
 */
-var isChecksumAddress = function (address) {
+var isChecksumAddress = function(address) {
     // Check each case
     address = address.replace('0x','');
     var addressHash = sha3(address.toLowerCase());
@@ -138,7 +111,7 @@ var isChecksumAddress = function (address) {
 };
 
 
-var isBTCAddress = function (address) {
+var isBTCAddress = function(address) {
   var regex = "^[13][a-km-zA-HJ-NP-Z1-9]{25,34}$";
   return address.match(regex);
 }

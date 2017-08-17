@@ -9302,3 +9302,29 @@ body.search .page__content {
       .ico-card-container input[type="search"]:-ms-input-placeholder,
       .ico-card-container input[type="tel"]:-ms-input-placeholder {
         font-size: 0.75rem; } }
+
+
+
+.ico-card.ico-card--bitcoin {
+  /*display: none;*/
+}
+
+.ico-card .step-one,
+.ico-card .step-two {
+  display: none;
+}
+
+.ico-card .step-one.is-active,
+.ico-card .step-two.is-active {
+  display: block;
+}
+
+.ico-card .ico-card__message.is-active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.ico-card__content--success.is-active {
+  display: block;
+}
