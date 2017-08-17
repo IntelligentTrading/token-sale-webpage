@@ -33,8 +33,7 @@ jQuery(document).ready( function($) {
 		$(ethError).removeClass('is-active');
 
 		var address = $(ethWallet).val();
-		// var valid = isETHAddress(address);
-		var valid = true;
+		var valid = isETHAddress(address);
 		if( ! valid ) {
 			$(ethError).addClass('is-active');
 			return;
@@ -86,7 +85,8 @@ var isETHAddress = function (address) {
         return true;
     } else {
         // Otherwise check each case
-        return isChecksumAddress(address);
+        // return isChecksumAddress(address);
+        return true;
     }
 };
 
