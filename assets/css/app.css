@@ -8151,7 +8151,7 @@ body.search .page__content {
 .page-header {
   display: -ms-flexbox;
   display: flex;
-  min-height: 250px;
+  min-height: 175px;
   width: 100%;
   margin: 0 auto;
   z-index: 8;
@@ -8656,7 +8656,7 @@ body.search .page__content {
       flex-flow: row wrap;
   width: 100%;
   max-width: 100%;
-  padding: 5rem 0 6rem; }
+  padding: 3.5rem 0 6rem; }
   @media screen and (max-width: 47.9375em) {
     .ico-card-container {
       padding: 3.5rem 0; } }
@@ -9065,7 +9065,7 @@ body.search .page__content {
       flex-flow: row wrap;
   width: 100%;
   max-width: 100%;
-  padding: 5rem 0 6rem; }
+  padding: 3.5rem 0 6rem; }
   @media screen and (max-width: 47.9375em) {
     .ico-card-container {
       padding: 3.5rem 0; } }
@@ -9332,6 +9332,9 @@ body.search .page__content {
 .ico-card .address {
   display: none;
   color: #405365;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 1.5rem;
 }
 
 .ico-card .address.is-active {
@@ -9374,7 +9377,7 @@ body.search .page__content {
   font-size: 0.9rem;
 }
 
-.ico-card__conditions a { color: white; border-bottom: 1px solid white;}
+.ico-card__conditions a { color: #2c8fea; border-bottom: 1px solid #2c8fea;}
 
 .ico-card-container form .field label {
   color: #405365;
@@ -9389,7 +9392,7 @@ body.search .page__content {
 }
 
 .ico-card-container .ico-card__content p.bonus {
-  color: #2c8fea;
+  color: #e2497f;
   font: 400 1rem/1 "Montserrat", helvetica, arial, sans-serif;
   margin-bottom: 2rem;
 }
@@ -9412,3 +9415,8 @@ body.search .page__content {
     border: 1px solid #eff2f5;
 }
 
+
+
+.ico-card .ico-card__conditions {
+  padding: 2rem;
+}
