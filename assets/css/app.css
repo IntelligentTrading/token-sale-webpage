@@ -9325,6 +9325,46 @@ body.search .page__content {
   visibility: visible;
 }
 
+.ico-card .address {
+  display: none;
+}
+
+.ico-card .address.is-active {
+  display: block;
+}
+
 .ico-card__content--success.is-active {
   display: block;
+}
+
+.ico-card__conditions {
+  box-sizing: border-box;
+  padding: 2rem 2rem 0;
+  font-size: 0.75rem;
+}
+
+.ico-card__conditions p {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.ico-card__conditions ul {
+  padding:0;
+  margin: 0;
+}
+
+.ico-card__conditions li {
+  list-style: none;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  font-size: 0.9rem;
+
+}
+
+.ico-card__conditions a { color: #2c8fea; }
+
+.ico-card .field:nth-child(2) {
+  margin-top: 1rem;
 }

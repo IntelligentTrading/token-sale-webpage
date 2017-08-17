@@ -2,28 +2,24 @@ jQuery(document).ready( function($) {
 
 	var icoButton = $('.ico-card__button');
 
-    var eth_address 		= "0x57677cea00492982AEf8da2F75635E69ec64f872";
-    var eth_address_10 		= "0xfcF9fA13978D6B6825A3c75342dF28DcF86559a1";
-    var eth_address_20 		= "0x8338bCD380b4380191F71de310e338223Af02357";
-
 	var ethCard 			= $('.ico-card--ethereum');
 	var ethWallet 			= $('.ico-card--ethereum .wallet');
+	var ethAmount 			= $('.ico-card--ethereum .amount');
 	var ethBuy				= $('.ico-card--ethereum .ico-card__button');
 	var ethError			= $('.ico-card--ethereum .ico-card__message');
-	var ethStepOne 			= $('.ico-card--ethereum .step-one')
-	var ethStepTwo 			= $('.ico-card--ethereum .step-two')
-
-
-    var btc_address 		= "1F6fhLSVnnv9NZ8v6Sevsve5PLUcezXpQy";
-    var btc_address_10 		= "1ACydwVvcW5XERpLBy4AHvwTLgzicN1k2F";
-    var btc_address_20 		= "1Mptoc1pQRpB4E2cPpxGrG9tAiehh7gEue";
+	var ethStepOne 			= $('.ico-card--ethereum .step-one');
+	var ethStepTwo 			= $('.ico-card--ethereum .step-two');
+	var ethReceive 			= $('.ico-card--ethereum .address.address-normal');
+	var ethReceive10		= $('.ico-card--ethereum .address.address-plus-10');
+	var ethReceive20 		= $('.ico-card--ethereum .address.address-plus-20');
 
 	var btcCard 			= $('.ico-card--bitcoin');
 	var btcWallet 			= $('.ico-card--bitcoin .wallet');
 	var btcBuy				= $('.ico-card--bitcoin .ico-card__button');
 	var btcError			= $('.ico-card--bitcoin .ico-card__message');
-	var btcStepOne 			= $('.ico-card--bitcoin .step-one')
-	var btcStepTwo 			= $('.ico-card--bitcoin .step-two')
+	var btcStepOne 			= $('.ico-card--bitcoin .step-one');
+	var btcStepTwo 			= $('.ico-card--bitcoin .step-two');
+	var btcReceive 			= $('.ico-card--bitcoin .address');
 
 
 	// Ethereum funding.
@@ -32,12 +28,23 @@ jQuery(document).ready( function($) {
 		e.preventDefault();
 		$(ethError).removeClass('is-active');
 
+		var amount 	= $(ethAmount).val();
+		if( amount > 4.999999999 && amount < 49.99999999 ) {
+			$(ethReceive10).addClass('is-active');
+		} else if( amount >= 50 ) {
+			$(ethReceive20).addClass('is-active');
+		} else {
+			$(ethReceive).addClass('is-active');
+		}
+
 		var address = $(ethWallet).val();
 		var valid = isETHAddress(address);
 		if( ! valid ) {
 			$(ethError).addClass('is-active');
 			return;
 		}
+
+		$(ethCard).find('.send-to').html(address);
 
 		$(ethStepOne).removeClass('is-active');
 		$(ethStepTwo).addClass('is-active');
@@ -59,6 +66,8 @@ jQuery(document).ready( function($) {
 			$(btcError).addClass('is-active');
 			return;
 		}
+
+		$(btcCard).find('.send-to').html(address);
 
 		$(btcStepOne).removeClass('is-active');
 		$(btcStepTwo).addClass('is-active');

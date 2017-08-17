@@ -477,23 +477,29 @@
               <h3 class="ico-card__title">Purchase with Ethereum</h3>
 
               <div class="step-one is-active">
-                
-                <p>
-                
-                  DO NOT SEND ETHEREUM TRANSACTIONS FROM EXCHANGES. YOU NEED A TOKEN COMPATIBLE ETHEREUM WALLET. 
-                  Below are a list of recommended ethereum wallets we suggest you use to make your investment in MediBond. 
 
-                  MyEtherWallet (online) https://www.myetherwallet.com/
-                  Mist (Desktop) https://github.com/ethereum/mist/releases
-                  Parity (Browser) https://parity.io/
-                  imToken (iPhone) https://itunes.apple.com/us/app/imtoken/id1153230571
-                  imToken (Android) https://play.google.com/store/apps/details?id=org.consenlabs.token
-                  
-                </p>
+                <div class="ico-card__conditions">
+                  <p>
+                    DO NOT SEND ETHEREUM TRANSACTIONS FROM EXCHANGES. YOU NEED A TOKEN COMPATIBLE ETHEREUM WALLET.
+                    Below are a list of recommended ethereum wallets we suggest you use to make your investment in ITT.
+                    <ul>
+                      <li><a href="https://www.myetherwallet.com" target="_blank">MyEtherWallet (online)</a></li>
+                      <li><a href="https://github.com/ethereum/mist/releases" target="_blank">Mist (Desktop)</a></li>
+                      <li><a href="https://parity.io/">Parity (Browser)</a></li>
+                      <li><a href="https://itunes.apple.com/us/app/imtoken/id1153230571" target="_blank">imToken (iPhone)</a></li>
+                      <li><a href="https://play.google.com/store/apps/details?id=org.consenlabs.token" target="_blank">imToken (Android)</a></li>
+                      </ul>
+                  </p>
+
+                </div><!-- .ico-card__conditions -->
 
                 <div class="ico-card__content">
                   <div class="ico-card__wallet-id">
                     <form action="#">
+                      <div class="field">
+                        <label for="ethereum-address">ETH Amount</label>
+                        <input class="amount" type="text" name="ethereum-amount" placeholder="Enter ETH send amount">
+                      </div>
                       <div class="field">
                         <label for="ethereum-address">Wallet Address</label>
                         <input class="wallet" type="text" name="ethereum-address" placeholder="Enter your Ethereum wallet address">
@@ -511,36 +517,14 @@
 
               <div class="step-two">
                 <div class="ico-card__content">
-                  <p>Send ETH to:</p><span class="copy-box copy-box--text">' + eth_address + '</span>
-                  <p>ITT tokens will be sent to:</p><span class="copy-box copy-box--text disabled">' + wallet + '</span>
+                  <p class="address address-normal">Send ETH to: <span class="copy-box copy-box--text">0x57677cea00492982AEf8da2F75635E69ec64f872</span></p>
+                  <p class="address address-plus-10"><strong>+10% Bouns</strong> - Send ETH to: <span class="copy-box copy-box--text">0xfcF9fA13978D6B6825A3c75342dF28DcF86559a1</span></p>
+                  <p class="address address-plus-20"><strong>+20% Bouns</strong> - Send ETH to: <span class="copy-box copy-box--text">0x8338bCD380b4380191F71de310e338223Af02357</span></p>
+                  <p>ITT tokens will be sent to your Ethereum address:</p><span class="copy-box copy-box--text disabled send-to"></span>
                 </div>
               </div>
 
             </div><!-- .ico-card -->
-            <!-- Ethereum ICO Card -->
-
-
-            </div><!-- .ico-card -->
-
-            <div class="ico-card__content" style="display:none;">
-              <p>Send ETH to:</p>
-              <span class="copy-box copy-box--text">
-                ' + eth_address + '
-              </span>
-              <p>
-                Your referral link is:
-              </p>
-              <span class="copy-box copy-box--text">
-                http://intelligenttrading.org/ico?r=' + wallet.substr(wallet.length - 8) + '
-              </span>
-              <p>
-                ITT tokens will be sent to your Ethereum address:
-              </p>
-              <span class="copy-box copy-box--text disabled">
-                ' + wallet + '
-              </span>
-            </div>
-  
             <!-- Ethereum ICO Card -->
 
 
@@ -571,8 +555,10 @@
 
               <div class="step-two">
                 <div class="ico-card__content">
-                  <p>Send BTC to:</p><span class="copy-box copy-box--text">Bitcoin Address here</span>
-                  <p>ITT tokens will be sent to:</p><span class="copy-box copy-box--text disabled">Customer wallet address.</span>
+                  <p class="address is-active">Send BTC to: <span class="copy-box copy-box--text">1F6fhLSVnnv9NZ8v6Sevsve5PLUcezXpQy</span></p>
+                  <p class="address address-plus-10">For +10% bouns: <span class="copy-box copy-box--text">1ACydwVvcW5XERpLBy4AHvwTLgzicN1k2F</span></p>
+                  <p class="address address-plus-20">For +20% bouns: <span class="copy-box copy-box--text">1Mptoc1pQRpB4E2cPpxGrG9tAiehh7gEue</span></p>
+                  <p>ITT tokens will be sent to:</p><span class="copy-box copy-box--text disabled send-to"></span>
                 </div>
               </div>
 
