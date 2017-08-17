@@ -8628,6 +8628,12 @@ body.search .page__content {
     @media screen and (max-width: 20em) {
       .ico-menu .ico-menu__title {
         font-size: 1.5rem; } }
+  .ico-menu .ico-menu__title span {
+    color: #e2497f;
+    display: block;
+    clear: both;
+    font-size: 0.9rem;
+  }
   .ico-menu .ico-menu__item {
     display: inline-block;
     display: none;
