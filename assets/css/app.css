@@ -9306,7 +9306,7 @@ body.search .page__content {
 
 
 .ico-card.ico-card--bitcoin {
-  /*display: none;*/
+  display: none;
 }
 
 .ico-card .step-one,
@@ -9337,20 +9337,27 @@ body.search .page__content {
   display: block;
 }
 
+.ico-menu.ico-menu--conditions {
+  background: #2c8fea;
+}
+.ico-menu.ico-menu--conditions p {
+  color: white;
+}
+
 .ico-card__conditions {
   box-sizing: border-box;
-  padding: 2rem 2rem 0;
+  padding: 2rem 0 0;
   font-size: 0.75rem;
 }
 
 .ico-card__conditions p {
-  font-size: 0.75rem;
-  line-height: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
 }
 
 .ico-card__conditions ul {
-  padding:0;
-  margin: 0;
+  padding: 0;
+  margin: 1.15rem 0 1.5rem;
 }
 
 .ico-card__conditions li {
@@ -9360,11 +9367,18 @@ body.search .page__content {
   display: inline-block;
   margin: 0 1rem 1rem 0;
   font-size: 0.9rem;
-
+  background: white;
+  padding: 0.33rem 1.1rem;
+  border-radius: 40px;
 }
 
 .ico-card__conditions a { color: #2c8fea; }
 
 .ico-card .field:nth-child(2) {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
+
+.ico-card p:empty {
+  display: none;
+}
+
