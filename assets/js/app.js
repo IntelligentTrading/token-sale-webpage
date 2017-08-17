@@ -10,7 +10,7 @@ jQuery(document).ready( function($) {
     var eth_address_10 = "0xfcF9fA13978D6B6825A3c75342dF28DcF86559a1";
     var eth_address_20 = "0x8338bCD380b4380191F71de310e338223Af02357";
 
-  
+
 	$(icoButton).on('click', function(e) {
 
 		e.preventDefault();
@@ -20,7 +20,7 @@ jQuery(document).ready( function($) {
 		var errorMessage 	= $(icoCard).find('.ico-card__message');
 		var wallet 			= $(icoCard).find('.wallet');
 		wallet 				= $(wallet).val();
-      
+
 		var coin = $(icoCard).data('coin');
 
 		var newContentContainer = $(icoCard).find('.ico-card__inner');

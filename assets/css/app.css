@@ -7207,15 +7207,15 @@ body {
 
 .header {
   /*
-	*
-	*	Styles for the Menu Icon
-	*
-	*/
+  *
+  * Styles for the Menu Icon
+  *
+  */
   /*
-	*
-	*	Styles when the mobile menu is activated
-	*
-	*/ }
+  *
+  * Styles when the mobile menu is activated
+  *
+  */ }
   @media screen and (max-width: 47.9375em) {
     .header .container {
       width: 96%;
