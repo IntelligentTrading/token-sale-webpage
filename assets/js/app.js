@@ -45,6 +45,7 @@ jQuery(document).ready( function($) {
 		}
 
 		$(ethCard).find('.send-to').html(address);
+		$(ethCard).find('.eth-amount').html(amount);
 
 		$(ethStepOne).removeClass('is-active');
 		$(ethStepTwo).addClass('is-active');

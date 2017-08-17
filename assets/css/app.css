@@ -9327,6 +9327,7 @@ body.search .page__content {
 
 .ico-card .address {
   display: none;
+  color: #405365;
 }
 
 .ico-card .address.is-active {
@@ -9374,11 +9375,39 @@ body.search .page__content {
 
 .ico-card__conditions a { color: #2c8fea; }
 
+.ico-card-container form .field label {
+  color: #405365;
+}
+
 .ico-card .field:nth-child(2) {
   margin-top: 2rem;
 }
 
 .ico-card p:empty {
   display: none;
+}
+
+.ico-card-container .ico-card__content p.bonus {
+  color: #2c8fea;
+  font: 400 1rem/1 "Montserrat", helvetica, arial, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.ico-card-container .ico-card__content .copy-box.send-to {
+  padding: 0.25rem 0;
+  background: 0;
+  border: 0;
+  color: #405365;
+}
+
+.ico-card-container .ico-card__content p.disclaimer {
+  font: italic 300 0.8rem/1.3 'Lato';
+}
+
+.ico-card-container .ico-card__content p.bonus .eth-amount {
+    font-weight: 700;
+    padding: 0.1rem 0.5rem;
+    background: #fbfbfb;
+    border: 1px solid #eff2f5;
 }
 
