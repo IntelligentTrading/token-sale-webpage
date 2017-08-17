@@ -7894,6 +7894,10 @@ footer {
       height: auto;
       display: block;
       margin: 0 auto 0.75rem; }
+
+    footer > .container.container--bottom .footer__copyright a {
+      color: rgba(255, 255, 255, 0.75);
+    }
     footer > .container.container--bottom .footer__copyright {
       font: 300 0.6rem/1.2 "Lato", helvetica, arial, sans-serif;
       color: rgba(255, 255, 255, 0.75);
