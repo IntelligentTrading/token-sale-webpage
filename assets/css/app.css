@@ -9372,12 +9372,9 @@ body.search .page__content {
   display: inline-block;
   margin: 0 1rem 1rem 0;
   font-size: 0.9rem;
-  background: white;
-  padding: 0.33rem 1.1rem;
-  border-radius: 40px;
 }
 
-.ico-card__conditions a { color: #2c8fea; }
+.ico-card__conditions a { color: white; border-bottom: 1px solid white;}
 
 .ico-card-container form .field label {
   color: #405365;
