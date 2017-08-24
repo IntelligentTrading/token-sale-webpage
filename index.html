@@ -487,15 +487,33 @@
                 <div class="ico-card__content">
                   <div class="ico-card__wallet-id">
                     <form action="#">
+                      
                       <div class="field">
                         <label for="ethereum-address">ETH Amount <small>(minimum 0.5 ETH)</small></label>
                         <input class="amount" type="text" name="ethereum-amount" placeholder="Enter ETH send amount">
                       </div>
+                      
                       <div class="field">
                         <label for="ethereum-address">Wallet Address</label>
                         <input class="wallet" type="text" name="ethereum-address" placeholder="Enter your Ethereum wallet address">
                         <span class="ico-card__message">That doesn't look like a valid wallet address</span>
                       </div>
+                      
+                      <div class="field email-field" style="display:none;">
+                        <p style="margin-top: 50px">
+                          Regulations require us to verify your email address before processing contributions greater than 28.50 ETH
+                        </p>
+                        <label for="ethereum-email">Email Address</label>
+                        <input class="email" type="email" name="ethereum-email" placeholder="Enter your email address">
+                        <span class="ico-card__message">That doesn't look like a valid email address</span>
+                      </div>
+                      
+                      <div class="field email-field" style="display:none;">
+                        <input type="checkbox" class="email-confirm" name="ethereum-email-confirm"> 
+                        <span class="email-show"></span>
+                        <p>I confirm this is my correct email address.</p>
+                      </div>
+                      
                     </form>
                   </div>
                 </div><!-- ico-card__content -->

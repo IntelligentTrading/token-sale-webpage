@@ -5,7 +5,10 @@ jQuery(document).ready( function($) {
 	var ethCard 			= $('.ico-card--ethereum');
 	var ethWallet 			= $('.ico-card--ethereum .wallet');
 	var ethAmount 			= $('.ico-card--ethereum .amount');
-	var ethBuy				= $('.ico-card--ethereum .ico-card__button');
+    var ethEmail 			= $('.ico-card--ethereum .email');
+    var ethEmailShow 		= $('.ico-card--ethereum .email-show');
+    var ethEmailConfirm 	= $('.ico-card--ethereum .email-confirm');
+  	var ethBuy				= $('.ico-card--ethereum .ico-card__button');
 	var ethError			= $('.ico-card--ethereum .ico-card__message');
 	var ethStepOne 			= $('.ico-card--ethereum .step-one');
 	var ethStepTwo 			= $('.ico-card--ethereum .step-two');
@@ -22,6 +25,19 @@ jQuery(document).ready( function($) {
 	var btcReceive 			= $('.ico-card--bitcoin .address');
 
 
+    $(ethAmount).on('change', function(e){
+      var amount 	= $(ethAmount).val();
+      if( amount > 28.5 ){
+        $('.email-field').show();
+      }else{
+        $('.email-field').hide();
+      }
+    });
+  
+    $(ethEmail).on('keyup', function(e){
+      $(ethEmailShow).html($(ethEmail).val());
+    });
+  
 	// Ethereum funding.
 	$(ethBuy).on('click', function(e) {
 
@@ -29,6 +45,14 @@ jQuery(document).ready( function($) {
 		$(ethError).removeClass('is-active');
 
 		var amount 	= $(ethAmount).val();
+      
+        if( amount > 28.5 ) {
+          // TODO:
+          // check that the email address is properly formed
+          // send the amount and email to our database
+          // if successful, carry on as normal
+        }
+      
 		if( amount > 4.999999999 && amount < 49.99999999 ) {
 			$(ethReceive10).addClass('is-active');
 		} else if( amount >= 50 ) {
