@@ -29,13 +29,7 @@ jQuery(document).ready( function($) {
 		$(ethError).removeClass('is-active');
 
 		var amount 	= $(ethAmount).val();
-		if( amount > 4.999999999 && amount < 49.99999999 ) {
-			$(ethReceive10).addClass('is-active');
-		} else if( amount >= 50 ) {
-			$(ethReceive20).addClass('is-active');
-		} else {
-			$(ethReceive).addClass('is-active');
-		}
+		$(ethReceive).addClass('is-active');
 
 		var address = $(ethWallet).val();
 		var valid = isETHAddress(address);
@@ -51,30 +45,6 @@ jQuery(document).ready( function($) {
 		$(ethStepTwo).addClass('is-active');
 
 	});
-
-
-
-	// Bitcoin funding.
-	$(btcBuy).on('click', function(e) {
-
-		e.preventDefault();
-		$(btcError).removeClass('is-active');
-
-		var address = $(btcWallet).val();
-		var valid = isBTCAddress(address);
-		// var valid = true;
-		if( ! valid ) {
-			$(btcError).addClass('is-active');
-			return;
-		}
-
-		$(btcCard).find('.send-to').html(address);
-
-		$(btcStepOne).removeClass('is-active');
-		$(btcStepTwo).addClass('is-active');
-
-	});
-
 
 });
 
