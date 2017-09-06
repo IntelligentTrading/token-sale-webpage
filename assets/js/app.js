@@ -44,6 +44,9 @@ jQuery(document).ready( function($) {
 		$(ethStepOne).removeClass('is-active');
 		$(ethStepTwo).addClass('is-active');
 
+		// Facebook tracking.
+		fbq('track', 'CompleteRegistration');
+
 	});
 
 });
