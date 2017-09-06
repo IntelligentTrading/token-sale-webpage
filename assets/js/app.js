@@ -63,7 +63,7 @@ jQuery(document).ready( function($) {
           var datastring = $(".ico-card form").serialize();
           $.ajax({
               type: "POST",
-              url: "//token-sale-email-bin.herokuapp.com/signup",
+              url: "//email-bin.intelligenttrading.org/signup",
               data: datastring,
               dataType: "json",
               success: function(data) {
