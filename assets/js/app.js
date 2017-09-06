@@ -16,26 +16,27 @@ jQuery(document).ready( function($) {
 	var ethReceive10		= $('.ico-card--ethereum .address.address-plus-10');
 	var ethReceive20 		= $('.ico-card--ethereum .address.address-plus-20');
 
-	var btcCard 			= $('.ico-card--bitcoin');
-	var btcWallet 			= $('.ico-card--bitcoin .wallet');
-	var btcBuy				= $('.ico-card--bitcoin .ico-card__button');
-	var btcError			= $('.ico-card--bitcoin .ico-card__message');
-	var btcStepOne 			= $('.ico-card--bitcoin .step-one');
-	var btcStepTwo 			= $('.ico-card--bitcoin .step-two');
-	var btcReceive 			= $('.ico-card--bitcoin .address');
-
-
     $(ethAmount).on('change', function(e){
       var amount 	= $(ethAmount).val();
       if( amount > 28.5 ){
         $('.email-field').show();
+        $('.ico-card__next-step').hide();
       }else{
         $('.email-field').hide();
+        $('.ico-card__next-step').show();
       }
     });
 
     $(ethEmail).on('keyup', function(e){
-      // $(ethEmailShow).html($(ethEmail).val());
+        $(ethEmailShow).html($(ethEmail).val());
+    });
+
+
+    $(ethEmailConfirm).click(function(){
+        if($(ethEmailConfirm).is(':checked')){
+          $('.ico-card__next-step').show();  
+        }
+        
     });
 
 	// Ethereum funding.
@@ -47,10 +48,7 @@ jQuery(document).ready( function($) {
 		var amount 	= $(ethAmount).val();
 
         if( amount > 28.5 ) {
-          // TODO:
           // check that the email address is properly formed
-          // send the amount and email to our database
-          // if successful, carry on as normal
           var validEmail = validateEmail( $(ethEmail).val() );
           if ( validEmail ) {
           	if ( ! $('input.email-confirm').is(':checked') ) {
@@ -59,6 +57,23 @@ jQuery(document).ready( function($) {
           } else {
           	$('.ico-card__message--email').addClass('is-active');
           }
+          
+          // send the amount and email to our database
+          
+          var datastring = $(".ico-card form").serialize();
+          $.ajax({
+              type: "POST",
+              url: "//token-sale-email-bin.herokuapp.com/signup",
+              data: datastring,
+              dataType: "json",
+              success: function(data) {
+                  // if successful, carry on as normal
+                  $('.ico-card__next-step').show();
+              },
+              error: function() {
+//                  alert('error handing here');
+              }
+          });
 
         }
 
