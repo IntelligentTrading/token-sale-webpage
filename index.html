@@ -505,15 +505,39 @@
                 <div class="ico-card__content">
                   <div class="ico-card__wallet-id">
                     <form action="#">
+
                       <div class="field">
                         <label for="ethereum-address">ETH Amount <small>(minimum 0.1 ETH)</small></label>
                         <input class="amount" type="text" name="ethereum-amount" placeholder="Enter ETH send amount">
                       </div>
-                      <div class="field">
+
+                      <div class="field field--address">
                         <label for="ethereum-address">Wallet Address</label>
                         <input class="wallet" type="text" name="ethereum-address" placeholder="Enter your Ethereum wallet address">
-                        <span class="ico-card__message">That doesn't look like a valid wallet address</span>
+                        <span class="ico-card__message ico-card__message--address">That doesn't look like a valid wallet address</span>
                       </div>
+
+                      <div class="field email-field" style="display:none;">
+                        <p class="regulations">Regulations require us to verify your email address and identity before processing contributions greater than 28.50 ETH</p>
+                        <label for="ethereum-email">Email Address</label>
+                        <input class="email" type="email" name="ethereum-email" placeholder="Enter your email address">
+                        <span class="ico-card__message ico-card__message--email">That doesn't look like a valid email address</span>
+                        <span class="ico-card__message ico-card__message--email-confirm">Please confirm your email address</span>
+                      </div>
+
+                      <div class="field email-field email-confirm" style="display:none;">
+                        <input type="checkbox" class="email-confirm" name="ethereum-email-confirm">
+                        <label for="email-confirm">I confirm this is my correct email address.</label>
+                        <span class="email-show"></span>
+                        <p class="regulations">
+                          Note that we may need to process your identity for 
+                          <a href="http://www.investopedia.com/terms/k/knowyourclient.asp">KYC</a> 
+                          and
+                          <a href="http://www.investopedia.com/terms/a/aml.asp">AML</a>
+                          before releasing tokens.
+                        </p>
+                      </div>
+
                     </form>
                   </div>
                 </div><!-- ico-card__content -->
