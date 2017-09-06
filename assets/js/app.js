@@ -62,13 +62,7 @@ jQuery(document).ready( function($) {
 
         }
 
-		if( amount > 4.999999999 && amount < 49.99999999 ) {
-			$(ethReceive10).addClass('is-active');
-		} else if( amount >= 50 ) {
-			$(ethReceive20).addClass('is-active');
-		} else {
-			$(ethReceive).addClass('is-active');
-		}
+		$(ethReceive).addClass('is-active');
 
 		var address = $(ethWallet).val();
 		var valid = isETHAddress(address);
@@ -82,37 +76,16 @@ jQuery(document).ready( function($) {
 
 		$(ethStepOne).removeClass('is-active');
 		$(ethStepTwo).addClass('is-active');
-
+      
+        // Facebook tracking.
+        fbq('track', 'CompleteRegistration');
+      
 	});
 
 	function validateEmail(email) {
 		var pattern = /^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
 	    return pattern.test(email);
 	}
-
-
-
-	// Bitcoin funding.
-	$(btcBuy).on('click', function(e) {
-
-		e.preventDefault();
-		$(btcError).removeClass('is-active');
-
-		var address = $(btcWallet).val();
-		var valid = isBTCAddress(address);
-		// var valid = true;
-		if( ! valid ) {
-			$(btcError).addClass('is-active');
-			return;
-		}
-
-		$(btcCard).find('.send-to').html(address);
-
-		$(btcStepOne).removeClass('is-active');
-		$(btcStepTwo).addClass('is-active');
-
-	});
-
 
 });
 

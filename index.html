@@ -44,8 +44,26 @@
 
   ga('create', 'UA-103858496-1', 'auto');
   ga('send', 'pageview');
-
 </script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1699225766778726');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1699225766778726&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
 </head>
 
 <body class="page page-token-sale template-ico">
@@ -470,7 +488,7 @@
 
         <div class="ico-menu">
           <div class="container">
-            <h3 class="ico-menu__title">Purchase ITT Tokens <span><strong>Reminder:</strong> 5 ETH or more gets 10% bonus ITT tokens &bull; 50 ETH or more gets 20% bonus ITT tokens</h3>
+            <h3 class="ico-menu__title">Purchase ITT Tokens <span><strong>Reminder:</strong> Send ETH from a token-compatible Etherium wallet</h3>
           </div>
         </div><!-- .ico-menu -->
 
@@ -489,7 +507,7 @@
                     <form action="#">
 
                       <div class="field">
-                        <label for="ethereum-address">ETH Amount <small>(minimum 0.5 ETH)</small></label>
+                        <label for="ethereum-address">ETH Amount <small>(minimum 0.1 ETH)</small></label>
                         <input class="amount" type="text" name="ethereum-amount" placeholder="Enter ETH send amount">
                       </div>
 
@@ -500,7 +518,7 @@
                       </div>
 
                       <div class="field email-field" style="display:none;">
-                        <p class="regulations">Regulations require us to verify your email address before processing contributions greater than 28.50 ETH</p>
+                        <p class="regulations">Regulations require us to verify your email address and identity before processing contributions greater than 28.50 ETH</p>
                         <label for="ethereum-email">Email Address</label>
                         <input class="email" type="email" name="ethereum-email" placeholder="Enter your email address">
                         <span class="ico-card__message ico-card__message--email">That doesn't look like a valid email address</span>
@@ -511,6 +529,13 @@
                         <input type="checkbox" class="email-confirm" name="ethereum-email-confirm">
                         <label for="email-confirm">I confirm this is my correct email address.</label>
                         <span class="email-show"></span>
+                        <p class="regulations">
+                          Note that we may need to process your identity for 
+                          <a href="http://www.investopedia.com/terms/k/knowyourclient.asp">KYC</a> 
+                          and
+                          <a href="http://www.investopedia.com/terms/a/aml.asp">AML</a>
+                          before releasing tokens.
+                        </p>
                       </div>
 
                     </form>
@@ -528,16 +553,6 @@
 
                   <div class="address address-normal">
                     Send ETH to: <span class="copy-box copy-box--text">0x57677cea00492982AEf8da2F75635E69ec64f872</span>
-                  </div>
-
-                  <div class="address address-plus-10">
-                    <p class="bonus">Send <span class="eth-amount"></span> ETH and receive +10% Bonus ITT tokens</p>
-                    Send ETH to: <span class="copy-box copy-box--text">0xfcF9fA13978D6B6825A3c75342dF28DcF86559a1</span>
-                  </div>
-
-                  <div class="address address-plus-20">
-                    <p class="bonus">Send <span class="eth-amount"></span> ETH and receive +20% Bonus ITT tokens</p>
-                    <strong>+20% Bonus</strong> - Send ETH to: <span class="copy-box copy-box--text">0x8338bCD380b4380191F71de310e338223Af02357</span>
                   </div>
 
                   <p>ITT tokens will be sent to your Ethereum address:</p><span class="copy-box copy-box--text disabled send-to"></span>
